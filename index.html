@@ -5,34 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abdelrhman Ramadan | DevOps & Cloud Engineer</title>
     <!-- FontAwesome & Google Fonts -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
-    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0284c7;
-            --primary-hover: #0369a1;
-            --accent: #38bdf8;
-            --bg-dark: #0f172a;
-            --bg-card: #1e293b;
-            --text-main: #f8fafc;
-            --text-muted: #94a3b8;
-            --border-color: #334155;
-            --terminal-bg: #030712;
+            --bg-color: #0d1117;
+            --panel-bg: #161b22;
+            --border-color: #30363d;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --accent-blue: #58a6ff;
+            --accent-green: #2ea043;
+            --accent-purple: #bc8cff;
+            --term-header: #21262d;
         }
 
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Tajawal', sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         body {
-            background-color: var(--bg-dark);
+            background-color: var(--bg-color);
             color: var(--text-main);
             line-height: 1.6;
-            overflow-x: hidden;
+            padding-bottom: 60px;
         }
 
         .container {
@@ -42,58 +41,30 @@
         }
 
         /* Hero Section */
-        .hero {
-            padding: 80px 0 50px 0;
+        header.hero {
+            padding: 60px 0 40px;
             text-align: center;
-            background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
             border-bottom: 1px solid var(--border-color);
+            background: radial-gradient(circle at top, #1f293d 0%, var(--bg-color) 70%);
         }
 
         .hero h1 {
-            font-size: 2.8rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            color: #fff;
             margin-bottom: 10px;
         }
 
         .hero h1 span {
-            color: var(--accent);
+            color: var(--accent-blue);
         }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.2rem;
             color: var(--text-muted);
-            margin-bottom: 25px;
-        }
-
-        .badge-pipeline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(16, 185, 129, 0.1);
-            color: #10b981;
-            border: 1px solid rgba(16, 185, 129, 0.3);
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.9rem;
             margin-bottom: 20px;
         }
 
-        .pulse-dot {
-            width: 8px;
-            height: 8px;
-            background-color: #10b981;
-            border-radius: 50%;
-            box-shadow: 0 0 10px #10b981;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0% { opacity: 1; }
-            50% { opacity: 0.4; }
-            100% { opacity: 1; }
-        }
-
-        .btn-group {
+        .hero-btns {
             display: flex;
             justify-content: center;
             gap: 15px;
@@ -101,216 +72,244 @@
         }
 
         .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            transition: all 0.3s ease;
+            padding: 10px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s;
             cursor: pointer;
-            border: none;
+            border: 1px solid transparent;
         }
 
         .btn-primary {
-            background-color: var(--primary);
-            color: white;
+            background-color: var(--accent-blue);
+            color: #000;
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
-            transform: translateY(-2px);
+            opacity: 0.9;
         }
 
         .btn-outline {
-            background-color: transparent;
+            border-color: var(--border-color);
             color: var(--text-main);
-            border: 1px solid var(--border-color);
+            background-color: var(--panel-bg);
         }
 
         .btn-outline:hover {
-            background-color: var(--bg-card);
-            border-color: var(--accent);
-            color: var(--accent);
+            border-color: var(--text-muted);
         }
 
-        /* Interactive Terminal */
+        /* Interactive Terminal Section */
         .terminal-section {
             margin: 40px 0;
         }
 
-        .terminal-card {
-            background-color: var(--terminal-bg);
+        .terminal {
+            background-color: #011627;
             border: 1px solid var(--border-color);
-            border-radius: 12px;
+            border-radius: 8px;
             overflow: hidden;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             font-family: 'Fira Code', monospace;
+            direction: ltr;
         }
 
-        .terminal-header {
-            background-color: #1e293b;
+        .terminal-bar {
+            background-color: var(--term-header);
             padding: 10px 15px;
             display: flex;
             align-items: center;
             gap: 8px;
             border-bottom: 1px solid var(--border-color);
-            direction: ltr;
         }
 
-        .dot { width: 12px; height: 12px; border-radius: 50%; }
-        .red { background-color: #ef4444; }
-        .yellow { background-color: #f59e0b; }
-        .green { background-color: #10b981; }
-        .terminal-title {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            margin-left: auto;
-        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; }
+        .dot-red { background-color: #ff5f56; }
+        .dot-yellow { background-color: #ffbd2e; }
+        .dot-green { background-color: #27c93f; }
+        .terminal-title { font-size: 0.85rem; color: var(--text-muted); margin-left: 10px; }
 
         .terminal-body {
             padding: 20px;
-            min-height: 220px;
+            min-height: 180px;
             max-height: 300px;
             overflow-y: auto;
-            direction: ltr;
-            text-align: left;
-            color: #38bdf8;
+            color: #d6deeb;
             font-size: 0.95rem;
         }
 
-        .terminal-line { margin-bottom: 8px; }
-        .prompt { color: #10b981; }
-        .command-output { color: #e2e8f0; margin-left: 15px; white-space: pre-wrap; }
-
-        .terminal-input-line {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .terminal-input {
+        .term-line { margin-bottom: 8px; }
+        .term-prompt { color: #27c93f; }
+        .term-input-line { display: flex; align-items: center; gap: 8px; }
+        .term-input {
             background: transparent;
             border: none;
-            color: #f8fafc;
+            color: #fff;
             font-family: 'Fira Code', monospace;
             font-size: 0.95rem;
-            outline: none;
             width: 100%;
+            outline: none;
         }
 
-        /* Sections Grid */
+        /* Skills Categories */
         .section-title {
-            font-size: 1.8rem;
-            margin: 40px 0 20px 0;
+            font-size: 1.6rem;
+            color: #fff;
+            margin: 40px 0 20px;
             display: flex;
             align-items: center;
-            gap: 12px;
-            color: var(--accent);
+            gap: 10px;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 10px;
         }
 
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 15px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
         }
 
         .skill-card {
-            background-color: var(--bg-card);
-            padding: 20px;
-            border-radius: 10px;
+            background-color: var(--panel-bg);
             border: 1px solid var(--border-color);
-            text-align: center;
-            transition: transform 0.3s, border-color 0.3s;
+            border-radius: 8px;
+            padding: 20px;
         }
 
-        .skill-card:hover {
-            transform: translateY(-50px);
-            transform: translateY(-5px);
-            border-color: var(--accent);
+        .skill-card h3 {
+            color: var(--accent-blue);
+            font-size: 1.1rem;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
 
-        .skill-card i {
-            font-size: 2rem;
-            color: var(--accent);
-            margin-bottom: 10px;
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
-        /* GitHub Repos Section */
+        .tag {
+            background-color: #21262d;
+            border: 1px solid var(--border-color);
+            color: var(--text-main);
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+        }
+
+        /* Repositories Controls & Section */
+        .repo-controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            flex: 1;
+            min-width: 200px;
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 10px 15px;
+            background-color: var(--panel-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            color: #fff;
+            outline: none;
+        }
+
         .repos-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
             gap: 20px;
         }
 
         .repo-card {
-            background-color: var(--bg-card);
+            background-color: var(--panel-bg);
             border: 1px solid var(--border-color);
-            border-radius: 10px;
+            border-radius: 8px;
             padding: 20px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
-            transition: all 0.3s;
+            transition: transform 0.2s, border-color 0.2s;
+            direction: ltr;
         }
 
         .repo-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 10px 20px rgba(2, 132, 199, 0.15);
+            transform: translateY(-3px);
+            border-color: var(--accent-blue);
+        }
+
+        .repo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 10px;
         }
 
         .repo-title {
-            font-size: 1.2rem;
-            color: var(--accent);
-            margin-bottom: 8px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            direction: ltr;
+            color: var(--accent-blue);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: 1.05rem;
+            word-break: break-all;
         }
 
         .repo-desc {
             color: var(--text-muted);
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             margin-bottom: 15px;
             flex-grow: 1;
         }
 
         .repo-meta {
             display: flex;
-            justify-content: space-between;
-            font-size: 0.85rem;
+            gap: 15px;
+            font-size: 0.8rem;
             color: var(--text-muted);
-            direction: ltr;
+            align-items: center;
         }
 
-        /* Chatbot Widget */
+        .lang-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            background-color: var(--accent-purple);
+        }
+
+        /* Floating AI Chat Widget */
         .chat-widget {
             position: fixed;
             bottom: 25px;
             right: 25px;
-            z-index: 1000;
+            z-index: 999;
         }
 
-        .chat-btn {
+        .chat-toggle-btn {
             width: 60px;
             height: 60px;
             border-radius: 50%;
-            background-color: var(--primary);
-            color: white;
+            background-color: var(--accent-blue);
+            color: #000;
             border: none;
             font-size: 24px;
             cursor: pointer;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.4);
-            transition: transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
             display: flex;
             align-items: center;
             justify-content: center;
-        }
-
-        .chat-btn:hover {
-            transform: scale(1.1);
         }
 
         .chat-box {
@@ -318,33 +317,44 @@
             bottom: 75px;
             right: 0;
             width: 360px;
-            height: 520px;
-            background-color: var(--bg-card);
+            height: 480px;
+            background-color: var(--panel-bg);
             border: 1px solid var(--border-color);
-            border-radius: 16px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             display: flex;
             flex-direction: column;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
-        .chat-box.hidden {
-            opacity: 0;
-            pointer-events: none;
-            transform: translateY(20px);
-        }
+        .chat-box.hidden { display: none; }
 
         .chat-header {
-            background-color: var(--primary);
-            color: white;
-            padding: 15px;
+            background-color: var(--term-header);
+            padding: 12px 16px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        .chat-messages {
+        .chat-header h3 {
+            font-size: 0.95rem;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .chat-close {
+            background: none;
+            border: none;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .chat-body {
             flex: 1;
             padding: 15px;
             overflow-y: auto;
@@ -353,78 +363,82 @@
             gap: 12px;
         }
 
-        .message {
-            padding: 10px 14px;
-            border-radius: 12px;
-            font-size: 0.9rem;
+        .chat-msg {
             max-width: 85%;
+            padding: 10px 14px;
+            border-radius: 10px;
+            font-size: 0.9rem;
             line-height: 1.4;
         }
 
-        .message.bot {
-            background-color: #334155;
+        .chat-msg.bot {
+            background-color: #21262d;
             color: var(--text-main);
             align-self: flex-start;
         }
 
-        .message.user {
-            background-color: var(--primary);
-            color: white;
+        .chat-msg.user {
+            background-color: var(--accent-blue);
+            color: #000;
             align-self: flex-end;
+            font-weight: 500;
         }
 
-        .chips-container {
+        .quick-chips {
             display: flex;
             gap: 6px;
-            flex-wrap: wrap;
-            padding: 0 15px 10px 15px;
+            overflow-x: auto;
+            padding: 8px 12px;
+            background-color: #0d1117;
+            border-top: 1px solid var(--border-color);
         }
 
         .chip {
-            background: rgba(56, 189, 248, 0.1);
-            color: var(--accent);
-            border: 1px solid rgba(56, 189, 248, 0.3);
+            white-space: nowrap;
+            background-color: #21262d;
+            color: var(--text-muted);
             padding: 4px 10px;
             border-radius: 15px;
             font-size: 0.75rem;
             cursor: pointer;
-            transition: background 0.2s;
+            border: 1px solid var(--border-color);
         }
 
         .chip:hover {
-            background: rgba(56, 189, 248, 0.25);
+            color: #fff;
+            border-color: var(--accent-blue);
         }
 
-        .chat-input-area {
-            padding: 12px;
-            border-top: 1px solid var(--border-color);
+        .chat-footer {
+            padding: 10px;
             display: flex;
             gap: 8px;
-            background-color: var(--bg-dark);
+            border-top: 1px solid var(--border-color);
+            background-color: var(--term-header);
         }
 
-        .chat-input-area input {
+        .chat-footer input {
             flex: 1;
-            padding: 10px 12px;
-            border-radius: 8px;
+            background-color: var(--bg-color);
             border: 1px solid var(--border-color);
-            background-color: var(--bg-card);
-            color: white;
+            border-radius: 6px;
+            padding: 8px 12px;
+            color: #fff;
             outline: none;
         }
 
-        .chat-input-area button {
-            background-color: var(--primary);
+        .chat-footer button {
+            background-color: var(--accent-blue);
+            color: #000;
             border: none;
-            color: white;
-            padding: 0 16px;
-            border-radius: 8px;
+            padding: 8px 14px;
+            border-radius: 6px;
             cursor: pointer;
+            font-weight: 600;
         }
 
         @media (max-width: 600px) {
-            .chat-box { width: 90vw; right: -10px; }
-            .hero h1 { font-size: 2rem; }
+            .chat-box { width: 310px; right: -10px; }
         }
     </style>
 </head>
@@ -433,104 +447,129 @@
     <!-- Hero Section -->
     <header class="hero">
         <div class="container">
-            <div class="badge-pipeline">
-                <span class="pulse-dot"></span> CI/CD Pipeline: Passing | Ready for Hire
-            </div>
-            <h1>مرحباً، أنا <span>عبد الرحمن رمضان</span></h1>
-            <p>DevOps & Cloud Engineer | متخصص في أتمتة السحاب والبنية التحتية</p>
-            
-            <div class="btn-group">
-                <a href="#github-repos" class="btn btn-primary"><i class="fa-solid fa-code-branch"></i> استعرض المشاريع</a>
-                <button onclick="triggerDownloadCV()" class="btn btn-outline"><i class="fa-solid fa-file-arrow-down"></i> تحميل CV</button>
+            <h1>عبد الرحمن رمضان | <span>DevOps Engineer</span></h1>
+            <p>Cloud Infrastructure • Kubernetes Orchestration • CI/CD Automation • Observability</p>
+            <div class="hero-btns">
+                <a href="https://github.com/abdoelnezamy07-devops" target="_blank" class="btn btn-outline">
+                    <i class="fa-brands fa-github"></i> ملف GitHub
+                </a>
+                <button class="btn btn-primary" onclick="openChatWithPrompt('ما هي أبرز مشاريع عبد الرحمن في DevOps؟')">
+                    <i class="fa-solid fa-robot"></i> تحدث مع مساعدي الذكي
+                </button>
             </div>
         </div>
     </header>
 
-    <main class="container">
+    <div class="container">
         
         <!-- Interactive Terminal -->
         <section class="terminal-section">
-            <div class="terminal-card">
-                <div class="terminal-header">
-                    <span class="dot red"></span>
-                    <span class="dot yellow"></span>
-                    <span class="dot green"></span>
-                    <span class="terminal-title">abdelrhman@devops-node:~</span>
+            <div class="terminal">
+                <div class="terminal-bar">
+                    <span class="dot dot-red"></span>
+                    <span class="dot dot-yellow"></span>
+                    <span class="dot dot-green"></span>
+                    <span class="terminal-title">bash - abdo@devops-node:~</span>
                 </div>
-                <div class="terminal-body" id="terminal-body">
-                    <div class="terminal-line">Welcome to Abdelrhman's Interactive CLI v1.0.0</div>
-                    <div class="terminal-line">Type <span style="color: #f59e0b;">'help'</span> to see available commands or try <span style="color: #f59e0b;">'skills'</span>, <span style="color: #f59e0b;">'projects'</span>, <span style="color: #f59e0b;">'contact'</span>.</div>
-                    <div class="terminal-line"><br></div>
+                <div class="terminal-body" id="term-body">
+                    <div class="term-line">Welcome to Abdelrhman's DevOps Interactive Terminal.</div>
+                    <div class="term-line">Type <span style="color:var(--accent-blue);">help</span> to list available commands.</div>
+                    <div class="term-line">----------------------------------------------------</div>
                 </div>
                 <div style="padding: 0 20px 15px 20px;">
-                    <div class="terminal-input-line">
-                        <span class="prompt">guest@devops:~$</span>
-                        <input type="text" id="terminal-input" class="terminal-input" placeholder="Type command here..." autofocus>
+                    <div class="term-input-line">
+                        <span class="term-prompt">abdo@devops-node:~$</span>
+                        <input type="text" id="term-input" class="term-input" placeholder="type command here..." autofocus>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Technical Skills -->
-        <h2 class="section-title"><i class="fa-solid fa-layer-group"></i> المهارات التقنية</h2>
+        <!-- Categorized DevOps Skills -->
+        <h2 class="section-title"><i class="fa-solid fa-cubes"></i> المهارات والتقنيات (Technical Skills)</h2>
         <div class="skills-grid">
             <div class="skill-card">
-                <i class="fa-brands fa-docker"></i>
-                <h3>Docker & K8s</h3>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Containerization & Orchestration</p>
+                <h3><i class="fa-solid fa-cloud"></i> Cloud & IaC</h3>
+                <div class="tags-container">
+                    <span class="tag">AWS</span>
+                    <span class="tag">Terraform</span>
+                    <span class="tag">Ansible</span>
+                    <span class="tag">Linux Admin</span>
+                </div>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-cloud"></i>
-                <h3>Terraform & IaC</h3>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Infrastructure as Code</p>
+                <h3><i class="fa-solid fa-server"></i> Containers & K8s</h3>
+                <div class="tags-container">
+                    <span class="tag">Docker</span>
+                    <span class="tag">Kubernetes</span>
+                    <span class="tag">Helm</span>
+                    <span class="tag">Ingress-NGINX</span>
+                    <span class="tag">Kubeadm</span>
+                </div>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-diagram-project"></i>
-                <h3>CI/CD Pipelines</h3>
-                <p style="color:var(--text-muted); font-size:0.85rem;">GitHub Actions & Jenkins</p>
+                <h3><i class="fa-solid fa-code-branch"></i> CI/CD & Automation</h3>
+                <div class="tags-container">
+                    <span class="tag">GitHub Actions</span>
+                    <span class="tag">Jenkins</span>
+                    <span class="tag">GitLab CI</span>
+                    <span class="tag">n8n Workflows</span>
+                </div>
             </div>
+
             <div class="skill-card">
-                <i class="fa-solid fa-gears"></i>
-                <h3>n8n & Automation</h3>
-                <p style="color:var(--text-muted); font-size:0.85rem;">Workflow & AI Integration</p>
+                <h3><i class="fa-solid fa-chart-line"></i> Observability & Scripting</h3>
+                <div class="tags-container">
+                    <span class="tag">Prometheus</span>
+                    <span class="tag">Grafana</span>
+                    <span class="tag">Alertmanager</span>
+                    <span class="tag">Python</span>
+                    <span class="tag">Bash</span>
+                </div>
             </div>
         </div>
 
-        <!-- Dynamic GitHub Projects -->
-        <h2 class="section-title" id="github-repos"><i class="fa-brands fa-github"></i> مشاريع GitHub (محدثة تلقائياً)</h2>
+        <!-- GitHub Repositories Section -->
+        <h2 class="section-title"><i class="fa-solid fa-folder-open"></i> المشاريع والأعمال (GitHub Projects)</h2>
+        
+        <div class="repo-controls">
+            <div class="search-box">
+                <input type="text" id="repo-search" placeholder="ابحث في المشاريع (مثال: Terraform, Kubernetes, Pipeline)...">
+            </div>
+        </div>
+
         <div class="repos-grid" id="repos-container">
-            <p style="color:var(--text-muted)">جاري جلب المشاريع من GitHub API...</p>
+            <div style="color:var(--text-muted);">جاري تحميل المشاريع تلقائياً من GitHub...</div>
         </div>
 
-    </main>
+    </div>
 
-    <!-- Chatbot Widget -->
+    <!-- AI Agent Floating Chatbot Widget -->
     <div class="chat-widget">
-        <button id="chat-toggle" class="chat-btn">
-            <i class="fa-solid fa-robot"></i>
+        <button id="chat-toggle" class="chat-toggle-btn">
+            <i class="fa-solid fa-headset"></i>
         </button>
 
         <div id="chat-box" class="chat-box hidden">
             <div class="chat-header">
-                <div>
-                    <strong>المساعد الذكي لـ عبد الرحمن</strong>
-                    <div style="font-size: 0.75rem; opacity: 0.8;">مربوط بالـ RAG السيرة الذاتية</div>
+                <h3><i class="fa-solid fa-robot" style="color:var(--accent-blue);"></i> AI Assistant (RAG Ready)</h3>
+                <button id="chat-close" class="chat-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="chat-body" id="chat-messages">
+                <div class="chat-msg bot">
+                    مرحباً! أنا المساعد الذكي الخاص بعبد الرحمن. اسألني عن خبراته في Cloud، Kubernetes، أو مشاريع الـ DevOps!
                 </div>
-                <button id="chat-close" style="background:none; border:none; color:white; cursor:pointer;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            
+            <div class="quick-chips">
+                <div class="chip" onclick="sendQuickPrompt('ما هي مهارات عبد الرحمن في Kubernetes؟')">Kubernetes</div>
+                <div class="chip" onclick="sendQuickPrompt('ما خبرته في Terraform و AWS؟')">Terraform & AWS</div>
+                <div class="chip" onclick="sendQuickPrompt('كيف صمم مشاريع CI/CD؟')">CI/CD Pipelines</div>
             </div>
 
-            <div id="chat-messages" class="chat-messages">
-                <div class="message bot">مرحباً! أنا الـ AI Agent الخاص بـ عبد الرحمن. يمكنك سؤالي عن خبراته، أو المشاريع التي عمل عليها.</div>
-            </div>
-
-            <!-- Quick Chips -->
-            <div class="chips-container">
-                <span class="chip" onclick="sendQuickPrompt('ما هي الخبرات العملية لعبد الرحمن؟')">الخبرات العملية</span>
-                <span class="chip" onclick="sendQuickPrompt('ما هي مهاراته في Kubernetes و Docker؟')">Docker & K8s</span>
-                <span class="chip" onclick="sendQuickPrompt('كيف تواصل مع عبد الرحمن؟')">التواصل</span>
-            </div>
-
-            <div class="chat-input-area">
+            <div class="chat-footer">
                 <input type="text" id="user-input" placeholder="اكتب سؤالك هنا...">
                 <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
             </div>
@@ -538,97 +577,114 @@
     </div>
 
     <script>
-        // GitHub User Configuration
+        // --- GitHub API Dynamic Repos Fetcher ---
         const GITHUB_USERNAME = 'abdoelnezamy07-devops';
-        const N8N_WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE'; // سيتم وضع رابط n8n لاحقاً
+        let allRepos = [];
 
-        // Fetch GitHub Repositories Automatically
         async function fetchGitHubRepos() {
             const container = document.getElementById('repos-container');
             try {
-                const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=6`);
+                // Fetch up to 30 updated repositories
+                const response = await fetch(`https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=updated&per_page=30`);
+                if (!response.ok) throw new Error('Failed to fetch repos');
+                
                 const repos = await response.json();
-
-                if (!Array.isArray(repos)) {
-                    container.innerHTML = `<p style="color:var(--text-muted)">يمكنك الاطلاع على كافة المشاريع في حساب GitHub المربوط.</p>`;
-                    return;
-                }
-
-                container.innerHTML = '';
-                repos.forEach(repo => {
-                    if (repo.fork) return; // Skip forks
-                    const card = document.createElement('div');
-                    card.className = 'repo-card';
-                    card.innerHTML = `
-                        <div>
-                            <div class="repo-title">
-                                <i class="fa-solid fa-book-bookmark"></i>
-                                <a href="${repo.html_url}" target="_blank" style="color:inherit; text-decoration:none;">${repo.name}</a>
-                            </div>
-                            <p class="repo-desc">${repo.description || 'مشروع متقدم في البنية التحتية وأتمتة السحاب.'}</p>
-                        </div>
-                        <div class="repo-meta">
-                            <span><i class="fa-solid fa-circle" style="color:#38bdf8; font-size:0.6rem;"></i> ${repo.language || 'DevOps'}</span>
-                            <span><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
-                        </div>
-                    `;
-                    container.appendChild(card);
-                });
+                // Filter out forks if desired and keep active repos
+                allRepos = repos.filter(repo => !repo.fork);
+                renderRepos(allRepos);
             } catch (err) {
-                container.innerHTML = `<p>تعذر جلب المشاريع تلقائياً. يرجى مراجعة رابط GitHub.</p>`;
+                container.innerHTML = `<div style="color:#ff5f56;">تعذر جلب المشاريع تلقائياً. يمكنك زيارة ملف GitHub مباشرة.</div>`;
             }
         }
 
-        // Terminal Functionality
-        const terminalInput = document.getElementById('terminal-input');
-        const terminalBody = document.getElementById('terminal-body');
+        function renderRepos(repos) {
+            const container = document.getElementById('repos-container');
+            if (repos.length === 0) {
+                container.innerHTML = `<div style="color:var(--text-muted);">لا توجد مشاريع تطابق البحث.</div>`;
+                return;
+            }
 
-        terminalInput.addEventListener('keypress', function(e) {
+            container.innerHTML = repos.map(repo => `
+                <div class="repo-card">
+                    <div>
+                        <div class="repo-header">
+                            <a href="${repo.html_url}" target="_blank" class="repo-title">
+                                <i class="fa-regular fa-bookmark"></i> ${repo.name}
+                            </a>
+                            <span style="font-size:0.75rem; color:var(--text-muted);"><i class="fa-regular fa-star"></i> ${repo.stargazers_count}</span>
+                        </div>
+                        <p class="repo-desc">${repo.description || 'DevOps infrastructure automation & deployment repo.'}</p>
+                    </div>
+                    <div class="repo-meta">
+                        <span><span class="lang-dot"></span> ${repo.language || 'YAML / Code'}</span>
+                        <span>Updated: ${new Date(repo.updated_at).toLocaleDateString('en-US', {month:'short', year:'numeric'})}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('repo-search').addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = allRepos.filter(r => 
+                r.name.toLowerCase().includes(term) || 
+                (r.description && r.description.toLowerCase().includes(term)) ||
+                (r.language && r.language.toLowerCase().includes(term))
+            );
+            renderRepos(filtered);
+        });
+
+        // --- Terminal Interactivity ---
+        const termInput = document.getElementById('term-input');
+        const termBody = document.getElementById('term-body');
+
+        termInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
-                const cmd = this.value.trim().toLowerCase();
-                this.value = '';
-                handleCommand(cmd);
+                const cmd = termInput.value.trim().toLowerCase();
+                termInput.value = '';
+                
+                // Append command line
+                appendTermLine(`abdo@devops-node:~$ ${cmd}`, 'var(--accent-green)');
+
+                switch(cmd) {
+                    case 'help':
+                        appendTermLine('Available commands: [skills, projects, contact, clear, whoami]');
+                        break;
+                    case 'skills':
+                        appendTermLine('Skills: AWS, Terraform, Ansible, Docker, K8s, Helm, GitHub Actions, Prometheus, Grafana, Python, Bash');
+                        break;
+                    case 'projects':
+                        appendTermLine(`Fetched ${allRepos.length} active repos from GitHub. Scroll down to filter!`);
+                        break;
+                    case 'whoami':
+                        appendTermLine('Abdelrhman Ramadan Sayed - DevOps & Cloud Infrastructure Engineer.');
+                        break;
+                    case 'contact':
+                        appendTermLine('GitHub: https://github.com/abdoelnezamy07-devops');
+                        break;
+                    case 'clear':
+                        termBody.innerHTML = '';
+                        break;
+                    default:
+                        if(cmd !== '') appendTermLine(`command not found: ${cmd}. Type 'help' for available options.`, '#ff5f56');
+                }
+                termBody.scrollTop = termBody.scrollHeight;
             }
         });
 
-        function handleCommand(cmd) {
-            appendTerminalLine(`guest@devops:~$ ${cmd}`, 'prompt');
-            let output = '';
-
-            switch(cmd) {
-                case 'help':
-                    output = `Available commands:\n - skills   : Show technical tech stack\n - projects : List top DevOps repos\n - contact  : Display contact links\n - clear    : Clear terminal screen`;
-                    break;
-                case 'skills':
-                    output = `[+] Docker & Kubernetes\n[+] Terraform & IaC\n[+] GitHub Actions & CI/CD Pipelines\n[+] Linux Administration & Bash\n[+] n8n & RAG Automation`;
-                    break;
-                case 'projects':
-                    output = `[1] Portfolio RAG Chatbot (Live)\n[2] CI/CD Automation Workflows\n[3] Kubernetes Infrastructure Deployment`;
-                    break;
-                case 'contact':
-                    output = `Email: abdelrhman@example.com\nGitHub: github.com/${GITHUB_USERNAME}`;
-                    break;
-                case 'clear':
-                    terminalBody.innerHTML = '';
-                    return;
-                default:
-                    output = `command not found: ${cmd}. Type 'help' for available commands.`;
-            }
-            appendTerminalLine(output, 'command-output');
+        function appendTermLine(text, color = 'var(--text-main)') {
+            const div = document.createElement('div');
+            div.className = 'term-line';
+            div.style.color = color;
+            div.innerText = text;
+            termBody.appendChild(div);
         }
 
-        function appendTerminalLine(text, className) {
-            const line = document.createElement('div');
-            line.className = `terminal-line ${className}`;
-            line.innerText = text;
-            terminalBody.appendChild(line);
-            terminalBody.scrollTop = terminalBody.scrollHeight;
-        }
+        // --- Floating Chatbot Logic & n8n Preparedness ---
+        const N8N_WEBHOOK_URL = 'YOUR_N8N_WEBHOOK_URL_HERE'; // ضع رابط n8n هنا لاحقاً
 
-        // Chatbot Interface Logic
         const chatToggle = document.getElementById('chat-toggle');
-        const chatClose = document.getElementById('chat-close');
         const chatBox = document.getElementById('chat-box');
+        const chatClose = document.getElementById('chat-close');
         const sendBtn = document.getElementById('send-btn');
         const userInput = document.getElementById('user-input');
         const chatMessages = document.getElementById('chat-messages');
@@ -636,26 +692,32 @@
         chatToggle.addEventListener('click', () => chatBox.classList.toggle('hidden'));
         chatClose.addEventListener('click', () => chatBox.classList.add('hidden'));
 
-        sendBtn.addEventListener('click', sendMessage);
-        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') sendMessage(); });
+        sendBtn.addEventListener('click', handleUserMessage);
+        userInput.addEventListener('keypress', (e) => { if (e.key === 'Enter') handleUserMessage(); });
+
+        function openChatWithPrompt(promptText) {
+            chatBox.classList.remove('hidden');
+            sendQuickPrompt(promptText);
+        }
 
         function sendQuickPrompt(promptText) {
             userInput.value = promptText;
-            sendMessage();
+            handleUserMessage();
         }
 
-        async function sendMessage() {
+        async function handleUserMessage() {
             const text = userInput.value.trim();
             if (!text) return;
 
-            appendMessage(text, 'user');
+            appendChatMsg(text, 'user');
             userInput.value = '';
-            const loadingMsg = appendMessage('جاري معالجة الإجابة...', 'bot');
+
+            const loadingMsg = appendChatMsg('جاري التفكير والأخذ من الـ Knowledge Base...', 'bot');
 
             try {
                 if (N8N_WEBHOOK_URL === 'YOUR_N8N_WEBHOOK_URL_HERE') {
                     setTimeout(() => {
-                        loadingMsg.innerText = "هذا الرد تجريبي! بمجرد ربط الـ Webhook الخاص بـ n8n وسيرتك الذاتية الـ PDF، سأجيبك بأعلى دقة متوقعة.";
+                        loadingMsg.innerText = "هذه إجابة تجريبية! عند إكمال خطوة n8n وربط الـ Webhook، سيجيب الـ AI بناءً على سيرتك الذاتية الـ PDF مباشرة.";
                     }, 800);
                     return;
                 }
@@ -666,27 +728,22 @@
                     body: JSON.stringify({ message: text })
                 });
                 const data = await res.json();
-                loadingMsg.innerText = data.output || data.text || "تم استقبال الرد من الـ AI.";
-
+                loadingMsg.innerText = data.output || data.text || "تم استقبال الرد.";
             } catch (err) {
-                loadingMsg.innerText = "تعذر الاتصال بـ n8n Webhook. يرجى التأكد من تشغيل الـ Workflow.";
+                loadingMsg.innerText = "حدث خطأ أثناء الاتصال بـ n8n Webhook.";
             }
         }
 
-        function appendMessage(text, sender) {
-            const msg = document.createElement('div');
-            msg.className = `message ${sender}`;
-            msg.innerText = text;
-            chatMessages.appendChild(msg);
+        function appendChatMsg(text, sender) {
+            const div = document.createElement('div');
+            div.className = `chat-msg ${sender}`;
+            div.innerText = text;
+            chatMessages.appendChild(div);
             chatMessages.scrollTop = chatMessages.scrollHeight;
-            return msg;
+            return div;
         }
 
-        function triggerDownloadCV() {
-            alert('قم بإضافة ملف CV.pdf داخل مستودع GitHub لربطه بالزر مباشرة!');
-        }
-
-        // Run on Page Load
+        // Initialize GitHub Repos Fetch on Page Load
         fetchGitHubRepos();
     </script>
 </body>
