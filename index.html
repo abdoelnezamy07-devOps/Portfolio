@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>السيرة الذاتية | AI Assistant</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Header / Hero Section -->
+    <header class="hero">
+        <div class="container">
+            <h1>مرحباً، أنا <span class="highlight">[اسمك هنا]</span></h1>
+            <p>[مسمالك الوظيفي - مثلاً: DevOps / Cloud Engineer]</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">عني</a>
+                <a href="#contact" class="btn btn-secondary">تواصل معي</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <section id="about" class="card">
+            <h2><i class="fa-solid fa-user"></i> نبذة عني</h2>
+            <p>اكتب هنا ملخص سريع عن خبراتك ومهاراتك الأساسية...</p>
+        </section>
+
+        <section id="skills" class="card">
+            <h2><i class="fa-solid fa-code"></i> المهارات والتقنيات</h2>
+            <div class="skills-tags">
+                <span class="tag">Linux</span>
+                <span class="tag">Docker</span>
+                <span class="tag">Kubernetes</span>
+                <span class="tag">Terraform</span>
+                <span class="tag">n8n</span>
+                <span class="tag">Python</span>
+            </div>
+        </section>
+    </main>
+
+    <!-- Chat Widget Button & Box -->
+    <div class="chat-widget">
+        <button id="chat-toggle" class="chat-btn">
+            <i class="fa-solid fa-robot"></i>
+        </button>
+
+        <div id="chat-box" class="chat-box hidden">
+            <div class="chat-header">
+                <h3><i class="fa-solid fa-bot"></i> المساعد الذكي</h3>
+                <button id="chat-close"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div id="chat-messages" class="chat-messages">
+                <div class="message bot">مرحباً! أنا المساعد الذكي الخاص بالسيرة الذاتية. كيف يمكنني مساعدتك اليوم؟</div>
+            </div>
+            <div class="chat-input-area">
+                <input type="text" id="user-input" placeholder="اسألني عن الخبرات، المهارات...">
+                <button id="send-btn"><i class="fa-solid fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
